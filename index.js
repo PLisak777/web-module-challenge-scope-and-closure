@@ -85,25 +85,25 @@ finalScore(inning, 9) might return:
 
 */
 
+
 function finalScore(inning, numInnings) {
     let runsPerInning = [{
         'Home': inning(),
         'Away': inning()
     }]
 
-    for (i = 0; i <= numInnings; i++) {
-        runsPerInning['Home'] += inning() * i;
-        runsPerInning['Away'] += inning() * i;
+    for (let i = 0; i <= numInnings; i++) {
+        runsPerInning['Home'] += inning();
+        runsPerInning['Away'] += inning();
     }
-    return runsPerInning;
 
     function inning() {
         let score = Math.floor(Math.random() * 3);
-        return score;
     }
+    return runsPerInning;
 }
 
-console.log(finalScore(inning, 9));
+console.table(finalScore(inning, 9));
 
 /* Task 4: 
 
