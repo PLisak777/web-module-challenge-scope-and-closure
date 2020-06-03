@@ -27,7 +27,7 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * - counter one has its variable inside the function and counter2 has it outside.
  * 2. Which of the two uses a closure? How can you tell?
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
@@ -56,17 +56,20 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-let score = Math.floor(Math.random() * 2);
 
-function inning(score) {
-    if (score === 1) {
-        return `Team A got ${score} run this inning`;
-    } else {
-        return `Team A got ${score} runs this inning.`
+
+function inning() {
+    let score = Math.floor(Math.random() * 3);
+    for (i = 0; i <= 8; i++); {
+        if (score === 1) {
+            return `Team A got ${score} run this inning`;
+        } else {
+            return `Team A got ${score} runs this inning.`
+        }
     }
 }
 
-console.log(inning(score));
+// console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -82,11 +85,28 @@ finalScore(inning, 9) might return:
 
 */
 
-function finalScore( /*code Here*/ ) {
+function finalScore(inning, numInnings) {
+    let runsPerInning = [{
+        Home: homeScore,
+        Away: awayScore
+    }]
+    for (i = 0; i <= numInnings; i++) {
+        return inning();
+    }
 
-    /*Code Here*/
-
+    function inning() {
+        let score = Math.floor(Math.random() * 3);
+        for (i = 0; i <= numInnings; i++); {
+            // if (score === 1) {
+            //     return `Team A scored ${score} run this inning`;
+            // } else {
+            //     return `Team A scored ${score} runs this inning.`
+            // }
+            return score;
+        }
+    }
 }
+console.log(finalScore(inning, 9));
 
 /* Task 4: 
 
