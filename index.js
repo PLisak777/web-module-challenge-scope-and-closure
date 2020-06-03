@@ -87,25 +87,22 @@ finalScore(inning, 9) might return:
 
 function finalScore(inning, numInnings) {
     let runsPerInning = [{
-        Home: homeScore,
-        Away: awayScore
+        'Home': inning(),
+        'Away': inning()
     }]
+
     for (i = 0; i <= numInnings; i++) {
-        return inning();
+        runsPerInning['Home'] += inning() * i;
+        runsPerInning['Away'] += inning() * i;
     }
+    return runsPerInning;
 
     function inning() {
         let score = Math.floor(Math.random() * 3);
-        for (i = 0; i <= numInnings; i++); {
-            // if (score === 1) {
-            //     return `Team A scored ${score} run this inning`;
-            // } else {
-            //     return `Team A scored ${score} runs this inning.`
-            // }
-            return score;
-        }
+        return score;
     }
 }
+
 console.log(finalScore(inning, 9));
 
 /* Task 4: 
