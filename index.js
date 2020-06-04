@@ -29,9 +29,9 @@ function processFirstItem(stringList, callback) {
  * 1. What is the difference between counter1 and counter2?
  * - counter one has its variable inside the function and counter2 has it outside.
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ * Counter1 is using a CLosure because it returns another function inside an existing function.
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * - Counter1 in case you want to be able to callback the 2nd function, counter2 as a simple counter.
  */
 
 // counter1 code
