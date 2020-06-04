@@ -81,20 +81,18 @@ finalScore(inning, 9) might return:
 
 function finalScore(inning, numInnings) {
     let runsPerInning = [{
-            'Home': inning(),
-            'Away': inning()
-        }]
-        // for (let score in inning()) {
-        //     callback(inning(score))
-        // }
+        'Home': inning(),
+        'Away': inning()
+    }]
+
     for (let i = 0; i <= numInnings; i++) {
         runsPerInning['Home'] = inning() + numInnings;
         runsPerInning['Away'] = inning() + numInnings;
     }
     return runsPerInning;
 }
-// console.log(runsPerInning[0].Home);
-console.table(finalScore(inning, 9));
+
+console.log(finalScore(inning, 9));
 
 /* Task 4: 
 
@@ -117,11 +115,24 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-let inningScore = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let inningScore = [];
 
 function scoreboard(inning, numInnings) {
-    for (let i = 0; i < inningScore.length - 1; i++) {
+    let inningScoreHome = 0;
+    let inningScoreAway = 0;
+    for (let i = 1; i <= numInnings; i++) {
+        inningScoreHome = inningScoreHome + inning();
+        inningScoreAway = inningScoreAway + inning();
+        if (i === 1) {
+            console.log(`${i}st Inning: ${inningScoreHome} - ${inningScoreAway}`);
+        } else if (i === 2) {
+            console.log(`${i}nd Inning: ${inningScoreHome} - ${inningScoreAway}`)
+        } else if (i === 3) {
+            console.log(`${i}rd Inning: ${inningScoreHome} - ${inningScoreAway}`)
+        } else console.log(`${i}th Inning: ${inningScoreHome} - ${inningScoreAway}`)
 
     }
-
+    console.log(`Final Score: ${inningScoreHome} - ${inningScoreAway}`);
 }
+
+console.log(scoreboard(inning, 9));
