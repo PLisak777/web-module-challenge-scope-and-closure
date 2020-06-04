@@ -63,7 +63,7 @@ function inning() {
     return score;
 }
 
-// console.log(inning());
+console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -132,7 +132,7 @@ function scoreboard(inning, numInnings) {
         } else console.log(`${i}th Inning: ${inningScoreHome} - ${inningScoreAway}`)
 
     }
-    console.log(`Final Score: ${inningScoreHome} - ${inningScoreAway}`);
+    return `Final Score: ${inningScoreHome} - ${inningScoreAway}`;
 }
 
 console.log(scoreboard(inning, 9));
