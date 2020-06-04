@@ -81,16 +81,16 @@ finalScore(inning, 9) might return:
 
 function finalScore(inning, numInnings) {
     let runsPerInning = [{
-        'Home': inning(),
-        'Away': inning()
-    }]
-// for (let score in inning()) {
-//     callback(inning(score))
-// }
+            'Home': inning(),
+            'Away': inning()
+        }]
+        // for (let score in inning()) {
+        //     callback(inning(score))
+        // }
     for (let i = 0; i <= numInnings; i++) {
-        runsPerInning['Home'] = inning() + numInnings; 
-        runsPerInning['Away'] = inning() + numInnings;  
-    }  
+        runsPerInning['Home'] = inning() + numInnings;
+        runsPerInning['Away'] = inning() + numInnings;
+    }
     return runsPerInning;
 }
 // console.log(runsPerInning[0].Home);
@@ -117,7 +117,11 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
+let inningScore = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 function scoreboard(inning, numInnings) {
-    
-    /* CODE HERE */
+    for (let i = 0; i < inningScore.length - 1; i++) {
+
+    }
+
 }
