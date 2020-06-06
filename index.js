@@ -27,7 +27,7 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * - counter one has its variable inside the function and counter2 has it outside.
+ * - counter1 has its variable inside the function and counter2 has it outside.
  * 2. Which of the two uses a closure? How can you tell?
  * Counter1 is using a CLosure because it returns another function inside an existing function.
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
@@ -51,12 +51,9 @@ function counter2() {
     return count++;
 }
 
-
 /* Task 2: inning() 
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
-
-
 
 function inning() {
     let score = Math.floor(Math.random() * 3);
@@ -86,8 +83,8 @@ function finalScore(inning, numInnings) {
     }]
 
     for (let i = 0; i <= numInnings; i++) {
-        runsPerInning['Home'] = inning() + numInnings;
-        runsPerInning['Away'] = inning() + numInnings;
+        runsPerInning[0]['Home'] += inning();
+        runsPerInning[0]['Away'] += inning();
     }
     return runsPerInning;
 }
@@ -114,8 +111,6 @@ and returns the score at each pont in the game, like so:
 9th inning: 6 - 10
 
 Final Score: 6 - 10 */
-
-// let inningScore = [];
 
 function scoreboard(inning, numInnings) {
     let inningScoreHome = 0;
