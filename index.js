@@ -13,9 +13,9 @@
  * Example of usage of this higher-order function:
  * Invoking `processFirstItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'foofoo'.
-*/
+ */
 function processFirstItem(stringList, callback) {
-  return callback(stringList[0])
+    return callback(stringList[0])
 }
 
 // ⭐️ Example Challenge END ⭐️
@@ -27,19 +27,19 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * - counter1 has its variable inside the function and counter2 has it outside.
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ * Counter1 is using a CLosure because it returns another function inside an existing function.
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
-*/
+ * - Counter1 in case you want to be able to callback the 2nd function, counter2 as a simple counter.
+ */
 
 // counter1 code
 function counterMaker() {
-  let count = 0;
-  return function counter() {
-   return count++;
-  }
+    let count = 0;
+    return function counter() {
+        return count++;
+    }
 }
 
 const counter1 = counterMaker();
@@ -48,19 +48,19 @@ const counter1 = counterMaker();
 let count = 0;
 
 function counter2() {
-  return count++;
+    return count++;
 }
-
 
 /* Task 2: inning() 
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+function inning() {
+    let score = Math.floor(Math.random() * 3);
+    return score;
 }
+
+console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -74,13 +74,22 @@ finalScore(inning, 9) might return:
   "Away": 5,
 }
 
-*/ 
+*/
 
-function finalScore(/*code Here*/){
+function finalScore(inning, numInnings) {
+    let runsPerInning = [{
+        'Home': inning(),
+        'Away': inning()
+    }]
 
-  /*Code Here*/
-
+    for (let i = 0; i <= numInnings; i++) {
+        runsPerInning[0]['Home'] += inning();
+        runsPerInning[0]['Away'] += inning();
+    }
+    return runsPerInning;
 }
+
+console.log(finalScore(inning, 9));
 
 /* Task 4: 
 
@@ -103,8 +112,22 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(inning, numInnings) {
+    let inningScoreHome = 0;
+    let inningScoreAway = 0;
+    for (let i = 1; i <= numInnings; i++) {
+        inningScoreHome = inningScoreHome + inning();
+        inningScoreAway = inningScoreAway + inning();
+        if (i === 1) {
+            console.log(`${i}st Inning: ${inningScoreHome} - ${inningScoreAway}`);
+        } else if (i === 2) {
+            console.log(`${i}nd Inning: ${inningScoreHome} - ${inningScoreAway}`)
+        } else if (i === 3) {
+            console.log(`${i}rd Inning: ${inningScoreHome} - ${inningScoreAway}`)
+        } else console.log(`${i}th Inning: ${inningScoreHome} - ${inningScoreAway}`)
+
+    }
+    return `Final Score: ${inningScoreHome} - ${inningScoreAway}`;
 }
 
-
+console.log(scoreboard(inning, 9));

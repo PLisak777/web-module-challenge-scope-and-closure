@@ -42,6 +42,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+ - Closure is a function that has everything set up properly. Nothing is undefined, every variable is accessible.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +64,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+- Closure is used when a function is created within another function. This code doesn't use Closure.
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+- Since it's scoped globally, it will reset its value every iteration. There isn't a way to store the values it returns without it being inside of something.
 c. What is the lexical scope of `newRoll`? 
+- The function it is inside of, or the instructions it's given?
 
 ### Task 3 - Stretch Goals
 
